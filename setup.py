@@ -10,7 +10,7 @@ this_dir = os.path.dirname(__file__)
 readme_filename = os.path.join(this_dir, 'README.md')
 requirements_filename = os.path.join(this_dir, 'requirements.txt')
 
-PACKAGE_NAME = 'executor'
+PACKAGE_NAME = 'python-executor-sdk'
 PACKAGE_VERSION = '1.0.0'
 PACKAGE_AUTHOR = 'Hao Hoang'
 PACKAGE_AUTHOR_EMAIL = 'haohoangofficial@gmail.com'
