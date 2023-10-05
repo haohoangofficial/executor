@@ -3,6 +3,8 @@ from executor.exceptions import ExecutorRequestError
 from bs4 import BeautifulSoup as bs
 from executor.executors import ExecutorsEnum
 from executor.requests import requests
+from lxml import etree
+import xml.etree.ElementTree as ET
 
 class ExecutorResponse(object):
     def __init__(self, body=None, http_status=None, headers=None, call=None):
@@ -29,6 +31,14 @@ class ExecutorResponse(object):
         except (TypeError, ValueError):
             return self._body
     
+    def xml(self):
+        """Return the response body in xml if possible"""
+        try:
+            # return etree.fromstring(str(self.html()))
+            return ET.fromstring(str(self.html()))
+        except (TypeError, ValueError):
+            return self._body
+
     def headers(self):
         """Return the response headers."""
         return self._headers
